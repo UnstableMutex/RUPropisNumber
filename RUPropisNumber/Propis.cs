@@ -25,6 +25,12 @@ namespace RUPropisNumber
 
         private static Dictionary<int, ICurrencyPropis> currencies;
 
+        /// <summary>
+        /// Расписывает денежную сумму словами
+        /// </summary>
+        /// <param name="sum">Денежная сумма</param>
+        /// <param name="ISOValute">iso код валюты</param>
+        /// <returns>пропись денежной суммы</returns>
         public static string CurrencyPhrase(decimal sum, int ISOValute)
         {
             var cur = currencies[ISOValute];
