@@ -1,63 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.ComponentModel.Composition.Hosting;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using RUPropisNumber;
+﻿using System;
 
-namespace PretentionCreator.StringFormatter
+namespace RUPropisNumber
 {
-
-
-    public static class Propis
-    {
-        static Propis()
-        {
-            var ass = Assembly.GetExecutingAssembly();
-            AssemblyCatalog ac = new AssemblyCatalog(ass);
-            CompositionContainer cc = new CompositionContainer(ac);
-            cc.ComposeParts();
-            var e = cc.GetExportedValues<ICurrencyPropis>();
-            var exports = cc.GetExports<ICurrencyPropis, ICurrencyAttr>();
-            currencies = new Dictionary<int, ICurrencyPropis>();
-            foreach (var export in exports)
-            {
-                currencies.Add(export.Metadata.CurrencyID, export.Value);
-            }
-        }
-
-        private static Dictionary<int, ICurrencyPropis> currencies;
-
-        public static string CurrencyPhrase(decimal sum, ushort ISOValute)
-        {
-            var cur = currencies[ISOValute];
-            return cur.GetPropis(sum);
-        }
-
-        public static string NumPhrase(ulong num, bool isMale)
-        {
-            return "";
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public static class PropisInternal
+     static class PropisInternal
     {
 
         internal static string CurPhrase(decimal money, CurrencyPropis big, CurrencyPropis small)
@@ -257,47 +202,4 @@ namespace PretentionCreator.StringFormatter
 
     //    public static CurrencyPropis Small643 { get; private set; }
     //}
-
-    public interface ICurrencyPropis
-    {
-        string GetPropis(decimal sum);
-
-    }
-
-
-    public class CurrencyPropis
-    {
-        public CurrencyPropis()
-        {
-
-        }
-
-        public CurrencyPropis(string p1, string p2, string p5)
-        {
-            Propis1 = p1;
-            Propis2 = p2;
-            Propis5 = p5;
-        }
-        private string _propis1;
-        private string _propis2;
-        private string _propis5;
-
-        public string Propis1
-        {
-            get { return _propis1; }
-            set { _propis1 = value; }
-        }
-
-        public string Propis2
-        {
-            get { return _propis2; }
-            set { _propis2 = value; }
-        }
-
-        public string Propis5
-        {
-            get { return _propis5; }
-            set { _propis5 = value; }
-        }
-    }
 }
