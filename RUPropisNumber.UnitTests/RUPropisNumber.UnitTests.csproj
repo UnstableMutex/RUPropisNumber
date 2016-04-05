@@ -50,8 +50,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="UnitTestRUB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTestNums.cs" />
+    <Compile Include="UnitTestUSD.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RUPropisNumber\RUPropisNumber.csproj">
