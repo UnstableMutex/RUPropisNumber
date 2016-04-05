@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PretentionCreator.StringFormatter
 {
-    static class Propis
+  public  static class Propis
     {
         public static string CurPhrase(decimal money, CurrencyPropis big, CurrencyPropis small)
         {
@@ -193,7 +193,7 @@ namespace PretentionCreator.StringFormatter
         }
     }
 
-    static class PropisList
+   public static class PropisList
     {
         static PropisList()
         {
@@ -205,7 +205,7 @@ namespace PretentionCreator.StringFormatter
 
         public static CurrencyPropis Small643 { get; private set; }
     }
-    internal class CurrencyPropis
+    public class CurrencyPropis
     {
         public CurrencyPropis()
         {
