@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RUPropisNumber
 {
-    public class Class1
+    public interface ICurrencyAttr
     {
+        ushort CurrencyID { get; }
     }
 }
