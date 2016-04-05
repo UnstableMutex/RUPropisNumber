@@ -18,7 +18,12 @@ namespace RUPropisNumber.UnitTests
             string res = CurPhrase(103236.61M);
             Assert.AreEqual(res, "—то три тыс€чи двести тридцать шесть долларов 61 цент");
         }
-
+        [TestMethod]
+        public void TestMethod3()
+        {
+            string res = CurPhrase(10300842.57M);
+            Assert.AreEqual(res, "ƒес€ть миллионов триста тыс€ч восемьсот сорок два доллара 57 центов");
+        }
 
       
         private string CurPhrase(decimal sum)
