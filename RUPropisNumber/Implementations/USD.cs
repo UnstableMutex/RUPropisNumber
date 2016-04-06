@@ -17,7 +17,7 @@ namespace RUPropisNumber.Implementations
         public USD()
         {
             _small = new CurrencyPropis("цент", "цента", "центов");
-            _big = new CurrencyPropis("доллар", "доллара", "долларов");
+            _big = new CurrencyPropis("доллар США", "доллара США", "долларов США");
         }
 
 
