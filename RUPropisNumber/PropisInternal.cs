@@ -143,63 +143,9 @@ namespace RUPropisNumber
                     bool ismale = (th > 2) || ((th == 1) && IsMale);
                     str = Dek3[d3] + Dek2[d2] + Dek1[d1] + EndDek1(d1, ismale) + Th[th] + EndTh(th, d1) + str;
                 }
-                ;
             }
-            ;
             str = str.Substring(1, 1).ToUpper() + str.Substring(2);
             return str;
         }
-
     }
-
-    //class PropisFormatProvider : IFormatProvider, ICustomFormatter
-    //{
-    //    public object GetFormat(Type formatType)
-    //    {
-    //        if (formatType == typeof(ICustomFormatter))
-    //            return this;
-    //        else
-    //            return null;
-    //    }
-
-    //    public string Format(string format, object arg, IFormatProvider formatProvider)
-    //    {
-
-    //        int valID;
-    //        decimal o = (decimal)arg;
-    //        bool b = int.TryParse(format, out valID);
-    //        if (!b)
-    //        {
-    //            valID = 643;
-    //        }
-    //        string result;
-    //        switch (valID)
-    //        {
-    //            case 643:
-    //                result = PropisInternal.CurPhrase(o, PropisList.Big643, PropisList.Small643);
-    //                break;
-    //            default:
-    //                result = PropisInternal.CurPhrase(o, PropisList.Big643, PropisList.Small643);
-    //                break;
-
-    //        }
-
-
-
-    //        return result;
-    //    }
-    //}
-
-    //public static class PropisList
-    //{
-    //    static PropisList()
-    //    {
-    //        Small643 = new CurrencyPropis("копейка", "копейки", "копеек");
-    //        Big643 = new CurrencyPropis("рубль", "рубля", "рублей");
-    //    }
-
-    //    public static CurrencyPropis Big643 { get; private set; }
-
-    //    public static CurrencyPropis Small643 { get; private set; }
-    //}
 }
