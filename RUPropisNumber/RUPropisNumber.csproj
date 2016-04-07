@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementations\EUR.cs" />
+    <Compile Include="Implementations\GBP.cs" />
     <Compile Include="Implementations\USD.cs" />
     <Compile Include="MEFAttributes\ICurrencyAttr.cs" />
     <Compile Include="CurrencyPropis.cs" />
