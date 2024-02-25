@@ -1,36 +1,34 @@
-using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace RUPropisNumber.UnitTests
+п»їusing System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace RuPropisNumber.UnitTests
 {
     [TestClass]
     public class UnitTestUSD
     {
-
-
         [TestMethod]
         public void TestMethod1USD()
         {
             string res = CurPhrase(103.64M);
-            Assert.AreEqual(res, "Сто три доллара США 64 цента");
+            Assert.AreEqual(res, "РЎС‚Рѕ С‚СЂРё РґРѕР»Р»Р°СЂР° РЎРЁРђ 64 С†РµРЅС‚Р°");
         }
         [TestMethod]
         public void TestMethod2USD()
         {
             string res = CurPhrase(103236.61M);
-            Assert.AreEqual(res, "Сто три тысячи двести тридцать шесть долларов США 61 цент");
+            Assert.AreEqual(res, "РЎС‚Рѕ С‚СЂРё С‚С‹СЃСЏС‡Рё РґРІРµСЃС‚Рё С‚СЂРёРґС†Р°С‚СЊ С€РµСЃС‚СЊ РґРѕР»Р»Р°СЂРѕРІ РЎРЁРђ 61 С†РµРЅС‚");
         }
         [TestMethod]
         public void TestMethod3USD()
         {
             string res = CurPhrase(10300842.57M);
-            Assert.AreEqual(res, "Десять миллионов триста тысяч восемьсот сорок два доллара США 57 центов");
+            Assert.AreEqual(res, "Р”РµСЃСЏС‚СЊ РјРёР»Р»РёРѕРЅРѕРІ С‚СЂРёСЃС‚Р° С‚С‹СЃСЏС‡ РІРѕСЃРµРјСЊСЃРѕС‚ СЃРѕСЂРѕРє РґРІР° РґРѕР»Р»Р°СЂР° РЎРЁРђ 57 С†РµРЅС‚РѕРІ");
         }
-
-
         private string CurPhrase(decimal sum)
         {
             return Propis.CurrencyPhrase(sum, 840);
-        }   
+        }
     }
 }

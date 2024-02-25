@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace RUPropisNumber
+namespace RuPropisNumber
 {
-     static class PropisInternal
+   public static class PropisInternal
     {
 
-        internal static string CurPhrase(decimal money, CurrencyPropis big, CurrencyPropis small)
+        public static string CurPhrase(decimal money, CurrencyPropis big, CurrencyPropis small)
         {
             return CurPhrase(money, big.Propis1, big.Propis2, big.Propis5, small.Propis1, small.Propis2, small.Propis5);
         }
@@ -148,4 +152,6 @@ namespace RUPropisNumber
             return str;
         }
     }
+
+
 }

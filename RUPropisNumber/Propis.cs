@@ -1,42 +1,40 @@
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.ComponentModel.Composition.Hosting;
-using System.Reflection;
-using RUPropisNumber.MEFAttributes;
+п»їusing RuPropisNumber.Implementations;
+using RuPropisNumber.Interfaces;
+using RUPropisNumber.Implementations;
 
-namespace RUPropisNumber
+namespace RuPropisNumber
 {
     public static class Propis
     {
         static Propis()
         {
-            var ass = Assembly.GetExecutingAssembly();
-            AssemblyCatalog ac = new AssemblyCatalog(ass);
-            CompositionContainer cc = new CompositionContainer(ac);
-            cc.ComposeParts();
-            var e = cc.GetExportedValues<ICurrencyPropis>();
-            var exports = cc.GetExports<ICurrencyPropis, ICurrencyAttr>();
-            currencies = new Dictionary<int, ICurrencyPropis>();
-            foreach (var export in exports)
-            {
-                currencies.Add(export.Metadata.CurrencyID, export.Value);
-            }
+            Dictionary<int, ICurrencyPropis> exports = new Dictionary<int, ICurrencyPropis>()
+            { {978, new EUR()}, {826, new GBP()}, {643, new RUB()}, {840, new USD()}};
+            currencies = exports;
         }
-
+        public static void SetCurrencies(Dictionary<int, ICurrencyPropis> cur)
+        {
+            currencies = cur;
+        }
         private static Dictionary<int, ICurrencyPropis> currencies;
 
         /// <summary>
-        /// Расписывает денежную сумму словами
+        /// Р Р°СЃРїРёСЃС‹РІР°РµС‚ РґРµРЅРµР¶РЅСѓСЋ СЃСѓРјРјСѓ СЃР»РѕРІР°РјРё
         /// </summary>
-        /// <param name="sum">Денежная сумма</param>
-        /// <param name="ISOValute">iso код валюты</param>
-        /// <returns>пропись денежной суммы</returns>
+        /// <param name="sum">Р”РµРЅРµР¶РЅР°СЏ СЃСѓРјРјР°</param>
+        /// <param name="ISOValute">iso РєРѕРґ РІР°Р»СЋС‚С‹</param>
+        /// <returns>РїСЂРѕРїРёСЃСЊ РґРµРЅРµР¶РЅРѕР№ СЃСѓРјРјС‹</returns>
         public static string CurrencyPhrase(decimal sum, int ISOValute)
         {
             var cur = currencies[ISOValute];
             return cur.GetPropis(sum);
         }
-
+        /// <summary>
+        /// Р Р°СЃРїРёСЃС‹РІР°РµС‚ С‡РёСЃР»Рѕ СЃР»РѕРІР°РјРё
+        /// </summary>
+        /// <param name="num">С‡РёСЃР»Рѕ</param>
+        /// <param name="isMale">РќРµРѕР±С…РѕРґРёРјС‹Р№ СЂРѕРґ С‡РёСЃР»Р° = true - РјСѓР¶СЃРєРѕР№, false - Р¶РµРЅСЃРєРёР№</param>
+        /// <returns></returns>
         public static string NumPhrase(ulong num, bool isMale)
         {
             return PropisInternal.NumPhrase(num, isMale);

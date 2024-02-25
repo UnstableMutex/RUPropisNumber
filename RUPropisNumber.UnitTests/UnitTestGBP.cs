@@ -1,6 +1,7 @@
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace RUPropisNumber.UnitTests
+using RuPropisNumber;
+namespace RuPropisNumber.UnitTests
 {
     [TestClass]
     public class UnitTestGBP
@@ -23,9 +24,6 @@ namespace RUPropisNumber.UnitTests
             string res = CurPhrase(10300842.57M);
             Assert.AreEqual(res, "ƒес€ть миллионов триста тыс€ч восемьсот сорок два фунта стерлингов 57 пенсов");
         }
-
-
-
         private string CurPhrase(decimal sum)
         {
             return Propis.CurrencyPhrase(sum, 826);

@@ -1,6 +1,4 @@
-using System;
-
-namespace RUPropisNumber
+﻿namespace RuPropisNumber
 {
     public class PropisFormatProvider : IFormatProvider, ICustomFormatter
     {
@@ -16,11 +14,11 @@ namespace RUPropisNumber
         {
             if (arg is decimal)
             {
-                return FormatDecimal(format,(decimal)arg);
+                return FormatDecimal(format, (decimal)arg);
             }
             if (arg is int)
             {
-                return FormatDecimal(format,(int)arg);
+                return FormatDecimal(format, (int)arg);
             }
 
             throw new FormatException();
@@ -39,12 +37,12 @@ namespace RUPropisNumber
             }
             if (format.ToLower() == "n0") //female num
             {
-                result = Propis.NumPhrase((ulong) o, false);
+                result = Propis.NumPhrase((ulong)o, false);
                 return result;
             }
-            if (format.ToLower() == "n1") //female num
+            if (format.ToLower() == "n1") //male num
             {
-                result = Propis.NumPhrase((ulong) o, true);
+                result = Propis.NumPhrase((ulong)o, true);
                 return result;
             }
             throw new FormatException();

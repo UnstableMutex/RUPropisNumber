@@ -1,7 +1,9 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace RUPropisNumber.UnitTests
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace RuPropisNumber.UnitTests
 {
     [TestClass]
     public class UnitTestRUB
@@ -18,10 +20,6 @@ namespace RUPropisNumber.UnitTests
             string res = CurPhrase(103236.61M);
             Assert.AreEqual(res, "Сто три тысячи двести тридцать шесть рублей 61 копейка");
         }
-
-
-      
-      
         private string CurPhrase(decimal sum)
         {
             return Propis.CurrencyPhrase(sum, 643);

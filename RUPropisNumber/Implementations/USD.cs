@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Text;
-using System.Threading.Tasks;
-using RUPropisNumber.MEFAttributes;
+using RuPropisNumber.Interfaces;
+using RuPropisNumber;
 
 namespace RUPropisNumber.Implementations
 {
-    [ExportMetadata("CurrencyID", 840, IsMultiple = false)]
-    [Export(typeof(ICurrencyPropis))]
-    class USD : ICurrencyPropis
+    internal class USD : ICurrencyPropis
     {
         private CurrencyPropis _small;
         private CurrencyPropis _big;
@@ -19,7 +15,6 @@ namespace RUPropisNumber.Implementations
             _small = new CurrencyPropis("цент", "цента", "центов");
             _big = new CurrencyPropis("доллар США", "доллара США", "долларов США");
         }
-
 
         public string GetPropis(decimal sum)
         {
