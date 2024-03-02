@@ -1,21 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
-    <ImplicitUsings>disable</ImplicitUsings>
+  <PropertyGroup Condition="  '$(Framework)' == 'net6.0*' ">
     <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net6.0;net481</TargetFrameworks>
+    <ImplicitUsings>disable</ImplicitUsings>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
-    <Version>1.0.2</Version>    
+    <Version>1.0.2</Version>
     <PackageId>RUPropisNumber</PackageId>
     <Description>Format Numbers in words, ru lang only</Description>
-	<Authors>DmitryShevyakov</Authors>
-	<PackageTags>Number;Ru;Format;Пропись;Число</PackageTags>
-  <RepositoryUrl>https://github.com/UnstableMutex/RUPropisNumber</RepositoryUrl>
+    <Authors>DmitryShevyakov</Authors>
+    <PackageTags>Number;Ru;Format;Пропись;Число</PackageTags>
+    <RepositoryUrl>https://github.com/UnstableMutex/RUPropisNumber</RepositoryUrl>
   </PropertyGroup>
-
   <ItemGroup>
     <Folder Include="Implementations\" />
   </ItemGroup>
