@@ -1,5 +1,6 @@
 ﻿using RuPropisNumber.Implementations;
 using RuPropisNumber.Interfaces;
+using System.Collections.Generic;
 
 namespace RuPropisNumber
 {

@@ -1,4 +1,6 @@
-﻿namespace RuPropisNumber
+﻿using System;
+
+namespace RuPropisNumber
 {
     public class PropisFormatProvider : IFormatProvider, ICustomFormatter
     {
