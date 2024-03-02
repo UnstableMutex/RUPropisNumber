@@ -16,6 +16,9 @@
     <Authors>DmitryShevyakov</Authors>
     <PackageTags>Number;Ru;Format;Пропись;Число</PackageTags>
     <RepositoryUrl>https://github.com/UnstableMutex/RUPropisNumber</RepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Implementations\" />
