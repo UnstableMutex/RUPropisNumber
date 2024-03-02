@@ -1,6 +1,5 @@
 ﻿using RuPropisNumber.Implementations;
 using RuPropisNumber.Interfaces;
-using RUPropisNumber.Implementations;
 
 namespace RuPropisNumber
 {
@@ -12,10 +11,12 @@ namespace RuPropisNumber
             { {978, new EUR()}, {826, new GBP()}, {643, new RUB()}, {840, new USD()}};
             currencies = exports;
         }
+
         public static void SetCurrencies(Dictionary<int, ICurrencyPropis> cur)
         {
             currencies = cur;
         }
+
         private static Dictionary<int, ICurrencyPropis> currencies;
 
         /// <summary>
@@ -29,6 +30,7 @@ namespace RuPropisNumber
             var cur = currencies[ISOValute];
             return cur.GetPropis(sum);
         }
+
         /// <summary>
         /// Расписывает число словами
         /// </summary>

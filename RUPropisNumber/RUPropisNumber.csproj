@@ -15,8 +15,4 @@
     <Folder Include="Implementations\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MSTest.TestFramework" Version="3.2.2" />
-  </ItemGroup>
-
 </Project>

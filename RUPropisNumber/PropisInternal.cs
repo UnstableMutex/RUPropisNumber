@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RuPropisNumber
+﻿namespace RuPropisNumber
 {
-   public static class PropisInternal
+    public static class PropisInternal
     {
-
         public static string CurPhrase(decimal money, CurrencyPropis big, CurrencyPropis small)
         {
             return CurPhrase(money, big.Propis1, big.Propis2, big.Propis5, small.Propis1, small.Propis2, small.Propis5);
         }
+
         /// <summary>
         /// Преобразование денежной суммы в строковое представление
         /// </summary>
@@ -41,11 +35,13 @@ namespace RuPropisNumber
                 case 1:
                     str += word1;
                     break;
+
                 case 2:
                 case 3:
                 case 4:
                     str += word234;
                     break;
+
                 default:
                     str += wordmore;
                     break;
@@ -58,11 +54,13 @@ namespace RuPropisNumber
                 case 1:
                     str += sword1;
                     break;
+
                 case 2:
                 case 3:
                 case 4:
                     str += sword234;
                     break;
+
                 default:
                     str += swordmore;
                     break;
@@ -70,6 +68,7 @@ namespace RuPropisNumber
             ;
             return str;
         }
+
         /// <summary>
         /// Добавление окончания к названию разряда
         /// </summary>
@@ -152,6 +151,4 @@ namespace RuPropisNumber
             return str;
         }
     }
-
-
 }

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using RuPropisNumber.Interfaces;
-using RuPropisNumber;
+﻿using RuPropisNumber.Interfaces;
 
-namespace RUPropisNumber.Implementations
+namespace RuPropisNumber.Implementations
 {
     internal class USD : ICurrencyPropis
     {

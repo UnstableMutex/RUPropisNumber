@@ -1,6 +1,3 @@
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RuPropisNumber;
 namespace RuPropisNumber.UnitTests
 {
     [TestClass]
