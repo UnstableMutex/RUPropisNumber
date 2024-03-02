@@ -9,6 +9,11 @@
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
     <Version>1.0.2</Version>    
+    <PackageId>RUPropisNumber</PackageId>
+    <Description>Format Numbers in words, ru lang only</Description>
+	<Authors>DmitryShevyakov</Authors>
+	<PackageTags>Number;Ru;Format;Пропись;Число</PackageTags>
+  <RepositoryUrl>https://github.com/UnstableMutex/RUPropisNumber</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
